@@ -1,20 +1,17 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 int main() {
-    double v0, v1, t;
+    int n;
+    cout << "Enter n: ";
+    cin >> n;
 
-    cin >> v0 >> v1 >> t;
-
-    double acceleration = (v1 - v0) / t;
-
-    if (acceleration == static_cast<int>(acceleration)) {
-        cout << static_cast<int>(acceleration) << endl;
-    } else {
-        cout << fixed << setprecision(2);
-        cout << acceleration << endl;
+    int sum = 0;
+    for (int i = 1; i <= n; i++) {
+        sum += i * i;
     }
+
+    cout << "Sum of series = " << sum << endl;
 
     return 0;
 }

@@ -1,18 +1,28 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 int main() {
-    double x, y;
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
 
-    cin >> x >> y;
+    bool isPrime = true;
 
-    double numerator = 3 * (x * x + 3);
-    double denominator = (y / 4) + 3;
-    double t = numerator / denominator;
+    if (n <= 1) {
+        isPrime = false;
+    } else {
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
 
-    cout << fixed << setprecision(4);
-    cout << "t=" << t << endl;
+    if (isPrime)
+        cout << n << " is a prime number." << endl;
+    else
+        cout << n << " is not a prime number." << endl;
 
     return 0;
 }

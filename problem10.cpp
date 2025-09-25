@@ -1,17 +1,22 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 int main() {
-    double distance, efficiency, pricePerGallon;
+    int num, maximum = -1e9;  // very small number as initial max
 
-    cin >> distance >> efficiency >> pricePerGallon;
+    cout << "Enter numbers (0 to stop): " << endl;
+    while (true) {
+        cin >> num;
+        if (num == 0) break;
+        if (num > maximum) {
+            maximum = num;
+        }
+    }
 
-    double gallonsNeeded = distance / efficiency;
-    double cost = gallonsNeeded * pricePerGallon;
-
-    cout << fixed << setprecision(3);
-    cout << "The cost of driving is $" << cost << endl;
+    if (maximum == -1e9)
+        cout << "No numbers were entered." << endl;
+    else
+        cout << "Maximum number = " << maximum << endl;
 
     return 0;
 }

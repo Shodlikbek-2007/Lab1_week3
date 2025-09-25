@@ -2,14 +2,14 @@
 using namespace std;
 
 int main() {
-    int num1 = 12;
-    int num2 = 38;
-
-    int sum = num1 + num2;
-    int product = num1 * num2;
-
-    cout << "Sum=" << sum << endl;
-    cout << "Product=" << product << endl;
-
+    int count = 0;
+    for (char ch = 'A'; ch <= 'Z'; ch++) {
+        cout << ch << " ";
+        count++;
+        if (count % 5 == 0) {  // new line after 5 characters
+            cout << endl;
+        }
+    }
+    cout << endl;
     return 0;
 }

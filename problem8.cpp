@@ -1,20 +1,17 @@
 #include <iostream>
-#include <iomanip>
-#include <cmath>
 using namespace std;
 
 int main() {
-    const double pi = 3.141592653589793;
-    double diameter;
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
 
-    cin >> diameter;
-
-    double radius = diameter / 2.0;
-
-    double area = 4 * pi * pow(radius, 2);
-
-    cout << fixed << setprecision(3);
-    cout << "Area: " << area << endl;
+    cout << "Reversed digits: ";
+    while (n > 0) {
+        cout << n % 10;
+        n /= 10;
+    }
+    cout << endl;
 
     return 0;
 }
